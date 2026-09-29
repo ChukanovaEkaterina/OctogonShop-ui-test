@@ -117,8 +117,7 @@ ___
 <img title="Allure Graphics" src="media/screens/Graphs.png" width="850">  
 </p>
 
-## <img src="media/logo/Allure2.svg" title="Allure TestOps" width="4%"/> Интеграция с Allure TestOps
-
+## <img alt="Allure TestOps" height="25" src="media/logo/Allure2.svg" width="25"/></a> <a name="Allure TestOps"></a>Allure TestOps [запуски](https://allure.qa.guru/launch/56453/)</a>
 Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.
 Результат выполнения автотестов отображается в <code>Allure TestOps</code>
 
