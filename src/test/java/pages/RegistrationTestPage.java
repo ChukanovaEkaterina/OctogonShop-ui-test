@@ -116,7 +116,7 @@ public class RegistrationTestPage {
     }
 
     @Step("Вывод ошибки невалидного Email \"{value}\"")
-    public RegistrationTestPage chekErrorInvalidPassword(String value) {
+    public RegistrationTestPage chekErrorInvalidMail(String value) {
         errorMessage.shouldHave(text(value));
         return this;
     }

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import testdata.TestData;
 
-import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class RegistrationTest extends TestBase {
 
@@ -13,114 +12,74 @@ public class RegistrationTest extends TestBase {
     @Test
     @DisplayName("Регистрация со всеми заполненными полями валидными данными")
     void successfulRegistrationTest() {
-        step("Открытие страницы регистрации", () -> {
             registrationTestPage
-                    .openPage();
-        });
-        step("Ввод валидных данных", () -> {
-            registrationTestPage
-                    .typeName(testData.name)
+                    .openPage()
+                    .typeName(testData.fullName)
                     .typePhone(testData.phone)
                     .typeEmail(testData.email)
                     .typeLanguage(testData.language)
                     .typePassword(testData.password)
                     .typePasswordConfirmation(testData.password)
                     .typePersonalData()
-                    .submit();
-        });
-        step("Проверка успешной регистрации", () -> {
-            registrationTestPage
-                    .chekOrderHistory(testData.textSuccessfulRegistrationForm)
+                    .submit()
+                    .chekOrderHistory(testData.TEXT_SUCCESSFUL_REGISTRATION_FORM)
                     .notVisibleRegistrationWindow();
-        });
-    }
+        }
 
     @Test
     @DisplayName("Отправка пустой формы регистрации")
     void allInputFieldsEmptyTest() {
-        step("Открытие страницы регистрации", () -> {
             registrationTestPage
-                    .openPage();
-        });
-        step("Нажать кнопку регистрации", () -> {
-            registrationTestPage
-                    .submit();
-        });
-        step("Проверка ошибки", () -> {
-            registrationTestPage
+                    .openPage()
+                    .submit()
                     .visibleRegistrationWindow()
-                    .chekErrorField(testData.textErrorAuthorizationForm);
-        });
-    }
+                    .chekErrorField(testData.TEXT_ERROR_REGISTRATION_FORM);
+        }
 
     @Test
     @DisplayName("Отправка формы регистрации c пустым Checkbox")
     void checkboxNotChecked() {
-        step("Открытие страницы регистрации", () -> {
             registrationTestPage
-                    .openPage();
-        });
-        step("Ввод валидных данных с пропуском Checkbox", () -> {
-            registrationTestPage
-                    .typeName(testData.name)
+                    .openPage()
+                    .typeName(testData.fullName)
                     .typePhone(testData.phone)
                     .typeEmail(testData.email)
                     .typeLanguage(testData.language)
                     .typePassword(testData.password)
                     .typePasswordConfirmation(testData.password)
-                    .submit();
-        });
-        step("Проверка ошибки", () -> {
-            registrationTestPage
-                    .chekErrorCheckbox(testData.textErrorAuthorizationForm);
-        });
-    }
+                    .submit()
+                    .chekErrorCheckbox(testData.TEXT_ERROR_REGISTRATION_FORM);
+        }
 
     @Test
     @DisplayName("Отправка формы регистрации с коротким паролем")
     void shortPasswordRegistration() {
-        step("Открытие страницы регистрации", () -> {
             registrationTestPage
-                    .openPage();
-        });
-        step("Ввод валидных данных с коротким паролем", () -> {
-            registrationTestPage
-                    .typeName(testData.name)
+                    .openPage()
+                    .typeName(testData.fullName)
                     .typePhone(testData.phone)
                     .typeEmail(testData.email)
                     .typeLanguage(testData.language)
                     .typePassword(testData.passwordLength)
                     .typePasswordConfirmation(testData.passwordLength)
                     .typePersonalData()
-                    .submit();
-        });
-        step("Проверка ошибки", () -> {
-            registrationTestPage
-                    .chekErrorPasswordLength(testData.textErrorPasswordLength);
-        });
-    }
+                    .submit()
+                    .chekErrorPasswordLength(testData.TEXT_ERROR_PASSWORD_LENGTH);
+        }
 
     @Test
-    @DisplayName("Отправка формы регистрации с невалидеым Mail")
+    @DisplayName("Отправка формы регистрации с невалидным Mail")
     void invalidPasswordRegistration() {
-        step("Открытие страницы регистрации", () -> {
             registrationTestPage
-                    .openPage();
-        });
-        step("Ввод данных с невалидеым Mail", () -> {
-            registrationTestPage
-                    .typeName(testData.name)
+                    .openPage()
+                    .typeName(testData.fullName)
                     .typePhone(testData.phone)
                     .typeEmail(testData.errorEmail)
                     .typeLanguage(testData.language)
-                    .typePassword(testData.passwordLength)
-                    .typePasswordConfirmation(testData.passwordLength)
+                    .typePassword(testData.password)
+                    .typePasswordConfirmation(testData.password)
                     .typePersonalData()
-                    .submit();
-        });
-        step("Проверка ошибки", () -> {
-            registrationTestPage
-                    .chekErrorPasswordLength(testData.textErrorMail);
-        });
-    }
+                    .submit()
+                    .chekErrorInvalidMail(testData.TEXT_ERROR_MAIL);
+        }
 }

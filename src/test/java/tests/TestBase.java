@@ -38,17 +38,10 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         String remoteUrl = System.getProperty("remoteUrl");
-        if (remoteUrl == null || remoteUrl.isEmpty() || "null".equals(remoteUrl)) {
+        if (remoteUrl != null && !remoteUrl.isBlank() && !"null".equalsIgnoreCase(remoteUrl)) {
             remoteUrl = "https://user1:1234@selenoid.qa.guru/wd/hub";
         }
         Configuration.remote = remoteUrl;
-
-        System.out.println("baseUrl: " + Configuration.baseUrl);
-        System.out.println("browser: " + Configuration.browser);
-        System.out.println("browserSize: " + Configuration.browserSize);
-        System.out.println("browserVersion: " + Configuration.browserVersion);
-        System.out.println("headless: " + Configuration.headless);
-        System.out.println("remoteUrl: " + remoteUrl);
     }
 
     @AfterEach
