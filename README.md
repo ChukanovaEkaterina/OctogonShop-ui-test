@@ -64,7 +64,7 @@ ____
 ## <img alt="Jenkins" height="25" src="media/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.qa.guru/job/42_Chukanova_OctagonShop/)</a>
 
 <p align="center">  
-<a href="https://jenkins.qa.guru/job/42_Chukanova_OctagonShop/"><img src="media/screens/Jenkins.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.qa.guru/job/42_Chukanova_OctagonShop/"><img src="media/screens/Jenkins1.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 
@@ -104,13 +104,13 @@ ___
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/screens/AllureReport.png" width="850">  
+<img title="Allure Overview Dashboard" src="media/screens/AllureReport1.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="media/screens/TestCase.png" width="850">  
+<img title="Allure Tests" src="media/screens/TestCase1.png" width="850">  
 </p>
 
 ### *Графики*
@@ -119,12 +119,12 @@ ___
 <img title="Allure Graphics" src="media/screens/Graphs.png" width="850">  
 </p>
 
-## <img alt="Allure TestOps" height="25" src="media/logo/Allure2.svg" width="25"/></a> <a name="Allure TestOps"></a>Allure TestOps [запуски](https://allure.qa.guru/launch/56453/)</a>
+## <img alt="Allure TestOps" height="25" src="media/logo/Allure2.svg" width="25"/></a> <a name="Allure TestOps"></a>Allure TestOps [запуски](https://allure.qa.guru/launch/57302)</a>
 Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.
 Результат выполнения автотестов отображается в <code>Allure TestOps</code>
 
 <p align="center">
-<img title="Allure TestOps запуски" src="media/screens/TestOps.png">
+<img title="Allure TestOps запуски" src="media/screens/TestCaseTestOps.png">
 </p>
 
 
