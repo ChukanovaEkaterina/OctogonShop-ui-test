@@ -40,10 +40,10 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         String remoteUrl = System.getProperty("remoteUrl");
-        if (remoteUrl != null && !remoteUrl.isBlank() && !"null".equalsIgnoreCase(remoteUrl)) {
-            remoteUrl = "https://user1:1234@selenoid.qa.guru/wd/hub";
+        if (remoteUrl != null && !remoteUrl.isBlank()) {
+            Configuration.remote = remoteUrl;
         }
-        Configuration.remote = remoteUrl;
+
     }
 
     @AfterEach
